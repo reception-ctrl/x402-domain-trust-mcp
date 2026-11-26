@@ -17,6 +17,8 @@ Add the following to your MCP client configuration (`claude_desktop_config.json`
 ### Free Trial Mode (No Wallet Required — 3 Domain Checks/Day)
 ```json
 {
+## Jurisdiction & Compliance
+This service is operated from the United States and is not available to persons or entities located in, or organized under the laws of, U.S.-sanctioned jurisdictions (including Cuba, Iran, North Korea, Syria, and the Crimea, Donetsk, and Luhansk regions) or individuals/wallets listed on the U.S. Treasury OFAC Specially Designated Nationals (SDN) list.
   "mcpServers": {
     "domain-trust": {
       "command": "npx",
