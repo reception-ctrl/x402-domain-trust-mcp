@@ -2,6 +2,10 @@
 
 Model Context Protocol (MCP) server for **Domain & DNS Trust** auditing and **SSRF-safe HTTP Redirect Chain Inspection**, backed by [x402](https://www.x402.org/) USDC micropayments on Base and Solana.
 
+- **npm Package:** [`x402-domain-trust-mcp`](https://www.npmjs.com/package/x402-domain-trust-mcp)
+- **Official MCP Registry:** `io.github.reception-ctrl/x402-domain-trust`
+- **Live x402 Backend API:** `https://x402-domain-trust.onrender.com`
+
 ## Tools Included
 
 | Tool Name | Endpoint | Price | Description |
@@ -24,3 +28,37 @@ Add the following to your MCP client configuration (`claude_desktop_config.json`
     }
   }
 }
+```
+
+### Paid Mode (Autonomous Base or Solana USDC Micropayments)
+To unlock `batch_check_domain_trust`, `inspect_url_redirects`, and unlimited `check_domain_trust` calls, supply a dedicated hot wallet key funded with USDC on **Base Mainnet** (`EVM_PRIVATE_KEY`) or **Solana Mainnet** (`SOLANA_PRIVATE_KEY`):
+
+```json
+{
+  "mcpServers": {
+    "domain-trust": {
+      "command": "npx",
+      "args": ["-y", "x402-domain-trust-mcp"],
+      "env": {
+        "EVM_PRIVATE_KEY": "0xYOUR_BASE_MAINNET_PRIVATE_KEY",
+        "MAX_PAYMENT_USD": "0.10"
+      }
+    }
+  }
+}
+```
+
+## Environment Variables
+
+| Variable | Required | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `EVM_PRIVATE_KEY` | Optional* | — | Hex private key (`0x...`) for a Base Mainnet (`eip155:8453`) wallet holding USDC. |
+| `SOLANA_PRIVATE_KEY` | Optional* | — | Base58 private key for a Solana Mainnet wallet holding SPL USDC. |
+| `MAX_PAYMENT_USD` | Optional | `0.10` | Safety cap on the maximum USDC amount paid per single request. |
+| `DOMAIN_TRUST_API_URL` | Optional | `https://x402-domain-trust.onrender.com` | Base URL for the Domain & DNS Trust x402 API. |
+
+*\*At least one wallet key (`EVM_PRIVATE_KEY` or `SOLANA_PRIVATE_KEY`) is required for paid endpoints and usage beyond the 3 daily free trials.*
+
+## Jurisdiction & Compliance
+
+This service is operated from the United States and is not available to persons or entities located in, or organized under the laws of, U.S.-sanctioned jurisdictions (including Cuba, Iran, North Korea, Syria, and the Crimea, Donetsk, and Luhansk regions) or individuals/wallets listed on the U.S. Treasury OFAC Specially Designated Nationals (SDN) list.
