@@ -1,0 +1,42 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.reception-ctrl/x402-domain-trust",
+  "title": "Domain & DNS Trust API (x402)",
+  "description": "Verify domain trust, DNS posture, and HTTP redirect chains with x402 USDC micropayments.",
+  "version": "1.0.1",
+  "repository": {
+    "url": "https://github.com/reception-ctrl/x402-domain-trust-mcp",
+    "source": "github"
+  },
+  "websiteUrl": "https://x402-domain-trust.onrender.com",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "x402-domain-trust-mcp",
+      "version": "1.0.1",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "EVM_PRIVATE_KEY",
+          "description": "Base Mainnet (eip155:8453) wallet private key for automatic USDC micropayments ($0.01-$0.05).",
+          "isRequired": false,
+          "isSecret": true
+        },
+        {
+          "name": "SOLANA_PRIVATE_KEY",
+          "description": "Solana Mainnet base58 private key for automatic SPL USDC micropayments.",
+          "isRequired": false,
+          "isSecret": true
+        },
+        {
+          "name": "MAX_PAYMENT_USD",
+          "description": "Maximum USDC amount per request in USD (default: 0.10).",
+          "isRequired": false,
+          "isSecret": false
+        }
+      ]
+    }
+  ]
+}

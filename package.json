@@ -1,0 +1,57 @@
+{
+  "name": "x402-domain-trust-mcp",
+  "version": "1.0.1",
+  "description": "MCP server for Domain & DNS Trust verification and SSRF-safe URL redirect inspection powered by x402 USDC micropayments.",
+  "mcpName": "io.github.reception-ctrl/x402-domain-trust",
+  "type": "module",
+  "main": "./dist/index.js",
+  "bin": {
+    "x402-domain-trust-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "server.json"
+  ],
+  "scripts": {
+    "build": "tsc && chmod +x dist/index.js",
+    "start": "node dist/index.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "x402",
+    "domain-trust",
+    "dns",
+    "phishing",
+    "security",
+    "url-inspector",
+    "usdc",
+    "base",
+    "solana"
+  ],
+  "author": "reception-ctrl",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reception-ctrl/x402-domain-trust-mcp.git"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "@scure/base": "^1.2.4",
+    "@solana/kit": "^8.6.0",
+    "@x402/evm": "^2.23.0",
+    "@x402/fetch": "^2.23.0",
+    "@x402/svm": "^2.23.0",
+    "viem": "^2.23.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.2"
+  }
+}
