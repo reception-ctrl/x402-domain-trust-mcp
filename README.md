@@ -33,6 +33,14 @@ Add the following to your MCP client configuration (`claude_desktop_config.json`
 }
 ```
 
+## Agent Skill (Claude Code, Cursor & Codex)
+
+Install the `domain-trust-audit` guardrail skill so your coding or browsing agent automatically audits unfamiliar URLs, shortened links, and new API/RPC/dApp domains before fetching or integrating them:
+
+```bash
+npx skills add reception-ctrl/x402-domain-trust-mcp
+```
+
 ## Environment Variables
 
 | Variable | Required | Default | Description |
