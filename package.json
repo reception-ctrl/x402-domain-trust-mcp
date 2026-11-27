@@ -1,6 +1,6 @@
 {
   "name": "x402-domain-trust-mcp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "MCP server for Domain & DNS Trust verification and SSRF-safe URL redirect inspection powered by x402 USDC micropayments.",
   "mcpName": "io.github.reception-ctrl/x402-domain-trust",
   "type": "module",
